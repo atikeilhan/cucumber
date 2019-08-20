@@ -57,12 +57,14 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
                 <configuration>
-                    <runOrder>alphabetical</runOrder>
-                    <testFailureIgnore>true</testFailureIgnore>
+                    <parallel>classes</parallel>
+                    <forkMode>perthread</forkMode>
+                    <threadCount>10</threadCount>
+                    <reuseForks>false</reuseForks>
                     <includes>
-                        <include>**/*CukesRunner.java</include>
-                        <include>**/*FailedTestRunner.java</include>
+                        <include>**/runners/*ParallelRunner*.java</include>
                     </includes>
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
             <plugin>
@@ -81,7 +83,7 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-                                <param>**/cucumber*.json</param>
+                                <param>**/parallel-cucumber*.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>

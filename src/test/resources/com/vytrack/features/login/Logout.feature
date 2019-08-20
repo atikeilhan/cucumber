@@ -9,9 +9,9 @@ Feature: Log out feature
   Scenario: Sales manager
     Given I login as a "sales manager"
     When I logout
-    Then the page title should be "Loginww"
-#
-#  Scenario: Store manager
-#    Given I login as a "store manager"
-#    When I logout
-#    Then the page title should be "Login"
+    Then the page title should be "Login"
+
+  Scenario: Store manager
+    Given I login as a "store manager"
+    When I logout
+    Then the page title should be "Login"
