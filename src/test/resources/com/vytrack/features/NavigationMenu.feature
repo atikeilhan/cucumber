@@ -3,7 +3,7 @@ Feature: Navigation menu options
 
 
   @navigation
-  Scenario: Go to Fleet, Vehicles as a driver
+  Scenario: Navigation menu options
     Given I login as a "driver"
     When I navigate to "Fleet" "Vehicles"
     Then the page title should be "Car - Entities - System - Car - Entities - System"
