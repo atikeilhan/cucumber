@@ -12,7 +12,7 @@ Feature: Login different types of users
       | sales manager |
       | store manager |
 
-
+  @smoke @login
 Scenario Outline: Login as different users again
   Given I login as a <user>
   When I logout

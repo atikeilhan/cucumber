@@ -1,6 +1,6 @@
 Feature: Login as different people using maps
 
-  @wip
+
   Scenario Outline: Verify title
     Given I login using these credentials
       | username | <username> |

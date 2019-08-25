@@ -4,6 +4,7 @@ Feature: User account information
     Given I login as a "driver"
     And I navigate to "Customers" "Contacts"
 
+  @smoke @account
   Scenario: test with manager
     When I click on customer with email "odugmore5@sakura.ne.jp"
     Then customer email should be "odugmore5@sakura.ne.jp" in the account page

@@ -1,7 +1,7 @@
 Feature: Navigation menu options
 
 
-  @navigation
+  @navigation  @XD-89
   Scenario: Go to Fleet, Vehicles as a driver
     Given I login as a "driver"
     When I navigate to "Fleet" "Vehicles"
@@ -19,7 +19,7 @@ Feature: Navigation menu options
 
 
 
-
+  @smoke
   Scenario: Go to Fleet, Vehicles as a sales manager
     Given I login as a "sales manager"
     When I navigate to "Fleet" "Vehicles"

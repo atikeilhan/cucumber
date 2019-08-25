@@ -7,6 +7,7 @@ Feature: Contacts page functionality
     When I navigate to "Customers" "Contacts"
     Then the page title should be "All - Contacts - Customers"
 
+  @smoke @contact
   Scenario: Verify contact create details
     Given I login as a driver
     And I navigate to "Customers" "Contacts"

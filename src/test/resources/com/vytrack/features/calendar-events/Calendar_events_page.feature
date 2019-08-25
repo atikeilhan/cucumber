@@ -5,11 +5,12 @@ Feature: Calendar events page options
     And I navigate to "Activities" "Calendar Events"
     When I click on the View per page dropdown
     Then follow view per page options should be visible
-      | 10  |
-      | 25  |
-      | 50  |
-      | 100 |
+  | 10  |
+  | 25  |
+  | 50  |
+  | 100 |
 
+  @smoke @activities
   Scenario: Activities table headers
     Given I login as a "sales manager"
     When I navigate to "Activities" "Calendar Events"
