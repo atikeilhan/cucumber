@@ -83,4 +83,3 @@ public abstract class NavigationBar {
     }
 
 }
- mvn verify -Dcucumber.options="--tags @smoke --dry-run"
