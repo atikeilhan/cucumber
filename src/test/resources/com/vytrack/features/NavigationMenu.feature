@@ -1,7 +1,7 @@
 Feature: Navigation menu options
 
 
-  @navigation
+  @navigation @xd-89
   Scenario: Go to Fleet, Vehicles as a driver
     Given I login as a "driver"
     When I navigate to "Fleet" "Vehicles"
