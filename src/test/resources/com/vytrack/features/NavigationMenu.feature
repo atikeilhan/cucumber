@@ -1,8 +1,6 @@
-@xd-89
 Feature: Navigation menu options
 
-
-  @navigation
+  @XD-89
   Scenario: Navigation menu options
     Given I login as a "driver"
     When I navigate to "Fleet" "Vehicles"
