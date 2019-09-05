@@ -1,6 +1,8 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.utilities.ConfigurationReader;
+import com.vytrack.utilities.DBType;
+import com.vytrack.utilities.DBUtility;
 import com.vytrack.utilities.Driver;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -15,7 +17,10 @@ public class Hooks {
 
 
     @Before
-    public void setUp(){
+    public void setUp(Scenario scenario){
+        if(scenario.getSourceTagNames().contains("DB")){
+            DBUtility.establishConnection(DBType.MYSQL);
+        }
         System.out.println("Before hooks");
         Driver.get().get(ConfigurationReader.get("url"));
         Driver.get().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -23,11 +28,15 @@ public class Hooks {
 
     @Before("@database")
     public void setUpDBCOnn(){
+        DBUtility.establishConnection(DBType.MYSQL);
         System.out.println("Setting up DB connection");
     }
 
     @After
     public void tearDown(Scenario scenario){
+        if(scenario.getSourceTagNames().contains("DB")){
+            DBUtility.closeConnections();
+        }
         System.out.println("After hooks");
         // check if the scenario is failed
         if (scenario.isFailed()){
@@ -40,7 +49,8 @@ public class Hooks {
     }
 
     @After("@database")
-    public void tearDownConnection(){
+    public void tearDownConnection(Scenario scenario){
+        DBUtility.closeConnections();
         System.out.println("Closing DB connection");
     }
 }
